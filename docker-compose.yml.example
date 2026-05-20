@@ -5,16 +5,16 @@ services:
       dockerfile: Dockerfile
     container_name: api-node-prisma-sqlite-app
     ports:
-      - "3010:3000"
+      - "3000"
     env_file:
       - .env
     volumes:
       - ./db:/app/db
     restart: unless-stopped
     networks:
-      - homologacao-network
+      - main-network
 
 networks:
-  homologacao-network:
-    name: homologacao-network
+  main-network:
+    name: main-network
     driver: bridge
